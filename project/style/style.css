@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+}
+
+body {
+  color: #eee;
+  background-color: #222;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body button,
+body input {
+  cursor: pointer;
+}
+
+body h3 {
+  font-size: 50px;
+  margin-bottom: 60px;
+}
+
+.container {
+  min-height: 100vh;
+  min-width: 1140px;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.container .hidden {
+  display: none !important;
+}
+
+.container button {
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 1rem 2rem;
+}
+
+.container button:hover {
+  background-color: #ccc;
+}
+
+.container input {
+  background: none;
+  border: 2px solid #eee;
+  color: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.container .switch_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container #datecalc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container #datecalc label {
+  margin-bottom: 10px;
+}
+
+.container #datecalc label input[type=date] {
+  width: 270px;
+}
+
+.container #datecalc label input[type=date]::-webkit-calendar-picker-indicator {
+  color: #eee;
+  opacity: 1;
+  background-image: url("../img/calendar-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 100% center;
+  background-size: 20px;
+  cursor: pointer;
+}
+
+.container #datecalc #diff_button {
+  margin: 30px;
+}
+
+.container #timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container #timer .timer_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container #timer .timer_wrapper .timer .clock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container #timer .timer_wrapper .timer .clock p {
+  font-size: 50px;
+}
+
+.container #timer .timer_wrapper .setting_form {
+  margin-left: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container #timer .timer_wrapper .setting_form input {
+  width: 100px;
+}
+
+.container #timer .timer_wrapper .setting_form button {
+  width: 210px;
+}
+
+.container footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container footer #mario,
+.container footer #mushroom {
+  height: 60px;
+}
+
+.container footer p {
+  text-align: center;
+  font-size: 10px;
+}

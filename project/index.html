@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style/style.css" />
+        <title>Калькулятор дат | Таймер</title>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+        <script type="module" src="js/main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="switch_buttons">
+                <button type="submit" id="calc_but">Калькулятор дат</button>
+                <button type="submit" id="timer_but">Таймер</button>
+            </div>
+            <form id="datecalc">
+                <h3>Калькулятор дат</h3>
+                <label>
+                    <strong>Первая дата:</strong>
+                    <input type="date" name="firstDate" />
+                </label>
+                <label>
+                    <strong>Вторая дата:</strong>
+                    <input type="date" name="secondDate" />
+                </label>
+                <button type="submit" id="diff_button">
+                    Расчитать промежуток
+                </button>
+                <p id="datecalc__result" style="color: red"></p>
+            </form>
+
+            <form id="timer" class="hidden">
+                <h3>Таймер</h3>
+                <div class="timer_wrapper">
+                    <div class="timer">
+                        <figure class="clock">
+                            <p class="mins">00</p>
+                            <p>:</p>
+                            <p class="secs">00</p>
+                        </figure>
+
+                        <div class="btn_group">
+                            <button class="start">Старт</button>
+                            <button class="reset">Сброс</button>
+                            <button class="pause">Пауза</button>
+                        </div>
+                    </div>
+
+                    <div class="setting_form">
+                        <label for="focusTime">Введите время в минутах</label>
+                        <input type="number" value="1" id="focusTime" />
+                        <button type="submit">Сохранить</button>
+                    </div>
+                </div>
+            </form>
+
+            <footer>
+                <img src="img/mario.png" alt="Mario" id="mario" />
+                <p>Copyright &copy; 2021 Илья Алексин. Все права защищены.</p>
+                <img src="img/mushroom.png" alt="Mushroom" id="mushroom" />
+            </footer>
+        </div>
+    </body>
+</html>

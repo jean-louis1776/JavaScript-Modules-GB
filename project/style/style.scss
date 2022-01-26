@@ -1,0 +1,145 @@
+@import 'reset';
+
+body {
+    color: #eee;
+    background-color: #222;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    user-select: none;
+
+    button,
+    input {
+        cursor: pointer;
+    }
+
+    h3 {
+        font-size: 50px;
+        margin-bottom: 60px;
+    }
+}
+
+.container {
+    min-height: 100vh;
+    min-width: 1140px;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+
+    .hidden {
+        display: none !important;
+    }
+
+    button {
+        border: none;
+        background-color: #eee;
+        color: #222;
+        font-size: 1rem;
+        font-family: inherit;
+        padding: 1rem 2rem;
+
+        &:hover {
+            background-color: #ccc;
+        }
+    }
+
+    input {
+        background: none;
+        border: 2px solid #eee;
+        color: inherit;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        outline: none;
+    }
+
+    .switch_buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #datecalc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+            margin-bottom: 10px;
+
+            input[type=date] {
+                width: 270px;
+
+                &::-webkit-calendar-picker-indicator {
+                    color: #eee;
+                    opacity: 1;
+                    background-image: url("../img/calendar-icon.svg");
+                    background-repeat: no-repeat;
+                    background-position: 100% center;
+                    background-size: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #diff_button {
+            margin: 30px;
+        }
+    }
+
+    #timer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .timer_wrapper {
+            display: flex;
+
+            .timer {
+                .clock {
+                    display: flex;
+                    margin-bottom: 30px;
+                    justify-content: center;
+
+                    p {
+                        font-size: 50px;
+                    }
+                }
+            }
+
+            .setting_form {
+                margin-left: 100px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: space-between;
+
+                input {
+                    width: 100px;
+                }
+
+                button {
+                    width: 210px;
+                }
+            }
+        }
+
+
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        #mario,
+        #mushroom {
+            height: 60px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 10px;
+        }
+    }
+}
