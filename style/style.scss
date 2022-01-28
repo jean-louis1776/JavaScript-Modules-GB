@@ -96,6 +96,14 @@ body {
         flex-direction: column;
         align-items: center;
 
+        h3 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 50px;
+        }
+
         .timer_wrapper {
             display: flex;
 
