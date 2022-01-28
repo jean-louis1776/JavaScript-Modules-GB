@@ -85,6 +85,10 @@ body {
         #diff_button {
             margin: 30px;
         }
+
+        #reset_but {
+            margin-bottom: 30px;
+        }
     }
 
     #timer {
@@ -101,7 +105,7 @@ body {
                     margin-bottom: 30px;
                     justify-content: center;
 
-                    p {
+                    span {
                         font-size: 50px;
                     }
                 }
@@ -116,6 +120,7 @@ body {
 
                 input {
                     width: 100px;
+                    margin: 10px 0;
                 }
 
                 button {

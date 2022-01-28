@@ -7,3 +7,7 @@ export const printError = (errorText) => {
 export const printResult = ({ years, months, days }) => {
     result.innerHTML = `<span style="color: #eee">Лет: ${years} - Месяцев: ${months} - Дней: ${days}</span>`
 }
+
+export const resetResult = () => {
+    result.innerText = ""
+}

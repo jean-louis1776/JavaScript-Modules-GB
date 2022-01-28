@@ -15,7 +15,7 @@
                 <button type="submit" id="calc_but">Калькулятор дат</button>
                 <button type="submit" id="timer_but">Таймер</button>
             </div>
-            <form id="datecalc">
+            <form id="datecalc" class="hidden">
                 <h3>Калькулятор дат</h3>
                 <label>
                     <strong>Первая дата:</strong>
@@ -28,17 +28,19 @@
                 <button type="submit" id="diff_button">
                     Расчитать промежуток
                 </button>
+                <button type="button" id="reset_but">Очистить форму</button>
                 <p id="datecalc__result" style="color: red"></p>
             </form>
 
-            <form id="timer" class="hidden">
+            <div id="timer">
                 <h3>Таймер</h3>
                 <div class="timer_wrapper">
                     <div class="timer">
                         <figure class="clock">
-                            <p class="mins">00</p>
-                            <p>:</p>
-                            <p class="secs">00</p>
+                            <span id="timeMin">00</span>
+                            <span>:</span>
+                            <span id="timeSec">00</span>
+                            <audio src="audio/timer_out.mp3"></audio>
                         </figure>
 
                         <div class="btn_group">
@@ -48,13 +50,17 @@
                         </div>
                     </div>
 
-                    <div class="setting_form">
-                        <label for="focusTime">Введите время в минутах</label>
+                    <form class="setting_form">
+                        <label for="focusTime">Введите минуты</label>
                         <input type="number" value="1" id="focusTime" />
+                        <label for="breakTime"
+                            >Введите минуты для нового цикла</label
+                        >
+                        <input type="number" value="1" id="breakTime" />
                         <button type="submit">Сохранить</button>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
 
             <footer>
                 <img src="img/mario.png" alt="Mario" id="mario" />
