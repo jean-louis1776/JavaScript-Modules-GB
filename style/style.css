@@ -151,7 +151,7 @@ body h3 {
           justify-content: center;
 }
 
-.container #timer .timer_wrapper .timer .clock span {
+.container #timer .timer_wrapper .timer .clock div {
   font-size: 50px;
 }
 
@@ -164,9 +164,9 @@ body h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

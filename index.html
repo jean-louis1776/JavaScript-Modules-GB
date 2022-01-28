@@ -37,27 +37,28 @@
                 <div class="timer_wrapper">
                     <div class="timer">
                         <figure class="clock">
-                            <span id="timeMin">00</span>
-                            <span>:</span>
-                            <span id="timeSec">00</span>
+                            <div class="mins">0</div>
+                            <div>:</div>
+                            <div class="secs">00</div>
                             <audio src="audio/timer_out.mp3"></audio>
                         </figure>
 
-                        <div class="btn_group">
+                        <div class="btn-group">
                             <button class="start">Старт</button>
                             <button class="reset">Сброс</button>
                             <button class="pause">Пауза</button>
                         </div>
                     </div>
 
-                    <form class="setting_form">
-                        <label for="focusTime">Введите минуты</label>
-                        <input type="number" value="1" id="focusTime" />
-                        <label for="breakTime"
-                            >Введите минуты для нового цикла</label
-                        >
-                        <input type="number" value="1" id="breakTime" />
-                        <button type="submit">Сохранить</button>
+                    <form class="setting_form" action=".">
+                        <label for="focusTime">Введите время (мин)</label>
+                        <input type="number" value="0" id="focusTime" />
+                        <div class="btn-settings">
+                            <button type="submit">Сохранить</button>
+                            <button type="submit" id="clearStorage">
+                                Стереть
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -68,5 +69,7 @@
                 <img src="img/mushroom.png" alt="Mushroom" id="mushroom" />
             </footer>
         </div>
+
+        <script src="js/timer.js"></script>
     </body>
 </html>
