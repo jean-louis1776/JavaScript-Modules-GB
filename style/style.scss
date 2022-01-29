@@ -16,6 +16,11 @@ body {
         font-size: 50px;
         margin-bottom: 60px;
     }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
 }
 
 .container {
@@ -97,7 +102,7 @@ body {
         align-items: center;
 
         h3 {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         p {
@@ -106,33 +111,37 @@ body {
 
         .timer_wrapper {
             display: flex;
+            flex-direction: column;
 
-            .timer {
-                .clock {
-                    display: flex;
-                    margin-bottom: 30px;
-                    justify-content: center;
-
-                    div {
-                        font-size: 50px;
-                    }
-                }
-            }
-
-            .setting_form {
-                margin-left: 100px;
+            .clock {
                 display: flex;
+                margin-bottom: 30px;
+                justify-content: center;
                 flex-direction: column;
                 align-items: center;
-                justify-content: space-between;
 
-                input {
-                    width: 100px;
-                    margin: 10px 0;
+                div {
+                    font-size: 50px;
                 }
 
-                button {
-                    width: 210px;
+                .inputWrapper,
+                .timer {
+                    display: flex;
+                }
+
+                .inputWrapper {
+                    margin-bottom: 30px;
+
+                    label {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        input {
+                            margin-top: 10px;
+                            width: 100px;
+                        }
+                    }
                 }
             }
         }

@@ -1,70 +1,66 @@
-const el = document.querySelector(".clock")
-const focusTimeInput = document.querySelector("#focusTime")
-const pauseBtn = document.querySelector(".pause")
-const clearBtn = document.querySelector("#clearStorage")
-const bell = document.querySelector("audio")
+import { HowlToExport } from "./howlerModule.js"
 
-const mindiv = document.querySelector(".mins")
-const secdiv = document.querySelector(".secs")
+// INPUTS
+const minutesInput = document.getElementById("minInput")
+const secondsInput = document.getElementById("secInput")
 
-const startBtn = document.querySelector(".start")
-localStorage.setItem("btn", "focus")
+// CONTROL BUTTONS
+const startBtn = document.getElementById("start")
+const pauseBtn = document.getElementById("pause")
+const resetBtn = document.getElementById("reset")
 
-let initial, paused, mins, seconds, totalsecs
+// OUTPUTS
+const minutesOutput = document.getElementById("mins")
+const secondsOutput = document.getElementById("secs")
 
-const decremenT = () => {
-    mindiv.textContent = Math.floor(seconds / 60)
-    secdiv.textContent = seconds % 60 > 9 ? seconds % 60 : `0${seconds % 60}`
-
-    if (seconds > 0) {
-        seconds--
-        initial = window.setTimeout("decremenT()", 1000)
-    } else {
-        mins = 0
-        seconds = 0
-        bell.play()
-    }
-}
-
-focusTimeInput.value = localStorage.getItem("focusTime")
-
-document.querySelector(".setting_form").addEventListener("submit", (e) => {
-    e.preventDefault()
-    localStorage.setItem("focusTime", focusTimeInput.value)
+// ALARM
+const alarm = new HowlToExport({
+    src: ["../audio/timer_out.mp3"],
 })
 
-document.querySelector(".reset").addEventListener("click", () => {
-    clearTimeout(initial)
-    mindiv.textContent = "0"
-    secdiv.textContent = "00"
+let interval
+
+startBtn.addEventListener("click", () => {
+    minutesOutput.textContent = minutesInput.value
+    secondsOutput.textContent = secondsInput.value
+
+    let minutes = minutesOutput.textContent
+    let seconds = secondsOutput.textContent
+
+    interval = setInterval(() => {
+        minutesOutput.textContent = minutes
+        secondsOutput.textContent = --seconds
+
+        if (minutes < 10) {
+            minutesOutput.textContent = `0${minutes}`
+        } else {
+            minutesOutput.textContent = minutes
+        }
+
+        if (seconds < 10) {
+            secondsOutput.textContent = `0${seconds}`
+        } else {
+            secondsOutput.textContent = seconds
+        }
+        if (seconds == 0) {
+            seconds = 59
+            --minutes
+            if (minutes < 0) {
+                clearInterval(interval)
+                alarm.play()
+            }
+        }
+    }, 1000)
 })
 
 pauseBtn.addEventListener("click", () => {
-    if (paused === undefined) {
-        return
-    }
-    if (paused) {
-        paused = false
-        initial = setTimeout("decremenT()", 60)
-        pauseBtn.textContent = "Пауза"
-    } else {
-        clearTimeout(initial)
-        pauseBtn.textContent = "Продолжить"
-        paused = true
-    }
+    clearInterval(interval)
 })
 
-startBtn.addEventListener("click", () => {
-    mins = +localStorage.getItem("focusTime") || 1
-
-    seconds = mins * 60
-    totalsecs = mins * 60
-    setTimeout(decremenT(), 60)
-    paused = false
+resetBtn.addEventListener("click", () => {
+    clearInterval(interval)
+    minutesInput.value = null
+    secondsInput.value = null
+    minutesOutput.textContent = "00"
+    secondsOutput.textContent = "00"
 })
-
-clearBtn.onclick = (e) => {
-    e.preventDefault()
-    localStorage.clear("focusTime")
-    focusTimeInput.value = ""
-}

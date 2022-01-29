@@ -30,6 +30,11 @@ body h3 {
   margin-bottom: 60px;
 }
 
+body input::-webkit-outer-spin-button,
+body input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .container {
   min-height: 100vh;
   min-width: 1140px;
@@ -136,7 +141,7 @@ body h3 {
 }
 
 .container #timer h3 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .container #timer p {
@@ -147,9 +152,13 @@ body h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.container #timer .timer_wrapper .timer .clock {
+.container #timer .timer_wrapper .clock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,14 +166,31 @@ body h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.container #timer .timer_wrapper .timer .clock div {
+.container #timer .timer_wrapper .clock div {
   font-size: 50px;
 }
 
-.container #timer .timer_wrapper .setting_form {
-  margin-left: 100px;
+.container #timer .timer_wrapper .clock .inputWrapper,
+.container #timer .timer_wrapper .clock .timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container #timer .timer_wrapper .clock .inputWrapper {
+  margin-bottom: 30px;
+}
+
+.container #timer .timer_wrapper .clock .inputWrapper label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,18 +201,11 @@ body h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-.container #timer .timer_wrapper .setting_form input {
+.container #timer .timer_wrapper .clock .inputWrapper label input {
+  margin-top: 10px;
   width: 100px;
-  margin: 10px 0;
-}
-
-.container #timer .timer_wrapper .setting_form button {
-  width: 210px;
 }
 
 .container footer {

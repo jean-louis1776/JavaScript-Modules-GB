@@ -15,7 +15,7 @@
                 <button type="submit" id="calc_but">Калькулятор дат</button>
                 <button type="submit" id="timer_but">Таймер</button>
             </div>
-            <form id="datecalc">
+            <form id="datecalc" class="hidden">
                 <h3>Калькулятор дат</h3>
                 <label>
                     <strong>Первая дата:</strong>
@@ -32,35 +32,43 @@
                 <p id="datecalc__result" style="color: red"></p>
             </form>
 
-            <div id="timer" class="hidden">
+            <div id="timer">
                 <h3>Таймер</h3>
-                <p>(по умолчанию стоит 1 минута)</p>
                 <div class="timer_wrapper">
-                    <div class="timer">
-                        <figure class="clock">
-                            <div class="mins">0</div>
+                    <figure class="clock">
+                        <form class="inputWrapper">
+                            <label>
+                                Мин
+                                <input
+                                    type="number"
+                                    class="minInput"
+                                    id="minInput"
+                                />
+                            </label>
+                            <div style="width: 50px"></div>
+                            <label>
+                                Сек
+                                <input
+                                    type="number"
+                                    class="secInput"
+                                    id="secInput"
+                                />
+                            </label>
+                        </form>
+
+                        <div class="timer" id="timerBlock">
+                            <div class="mins" id="mins">00</div>
                             <div>:</div>
-                            <div class="secs">00</div>
-                            <audio src="audio/timer_out.mp3"></audio>
-                        </figure>
-
-                        <div class="btn-group">
-                            <button class="start">Старт</button>
-                            <button class="reset">Сброс</button>
-                            <button class="pause">Пауза</button>
+                            <div class="secs" id="secs">00</div>
                         </div>
+                        <audio src="audio/timer_out.mp3"></audio>
+                    </figure>
+
+                    <div class="btn-group">
+                        <button id="start">Старт</button>
+                        <button id="pause">Стоп</button>
+                        <button id="reset">Сброс</button>
                     </div>
-
-                    <form class="setting_form" action=".">
-                        <label for="focusTime">Введите время (мин)</label>
-                        <input type="number" value="0" id="focusTime" />
-                        <div class="btn-settings">
-                            <button type="submit">Сохранить</button>
-                            <button type="submit" id="clearStorage">
-                                Стереть
-                            </button>
-                        </div>
-                    </form>
                 </div>
             </div>
 
@@ -71,6 +79,6 @@
             </footer>
         </div>
 
-        <script src="js/timer.js"></script>
+        <!-- <script src="js/timer.js"></script> -->
     </body>
 </html>
