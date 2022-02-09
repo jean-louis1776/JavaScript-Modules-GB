@@ -1,4 +1,4 @@
-import { HowlToExport } from "./howlerModule.js"
+import { Howl } from "howler"
 
 // INPUTS
 const minutesInput = document.getElementById("minInput")
@@ -14,7 +14,7 @@ const minutesOutput = document.getElementById("mins")
 const secondsOutput = document.getElementById("secs")
 
 // ALARM
-const alarm = new HowlToExport({
+const alarm = new Howl({
     src: ["../audio/timer_out.mp3"],
 })
 
