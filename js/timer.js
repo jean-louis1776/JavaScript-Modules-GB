@@ -33,6 +33,8 @@ startBtn.addEventListener("click", () => {
 
         if (minutes < 10) {
             minutesOutput.textContent = `0${minutes}`
+        } else if (minutes < 1) {
+            minutesOutput.textContent = `00`
         } else {
             minutesOutput.textContent = minutes
         }
