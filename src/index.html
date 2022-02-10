@@ -4,77 +4,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Калькулятор дат | Таймер</title>
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+        <title>Галерея</title>
     </head>
     <body>
+        <h1>Галерея</h1>
         <div class="container">
-            <div class="switch_buttons">
-                <button type="submit" id="calc_but">Калькулятор дат</button>
-                <button type="submit" id="timer_but">Таймер</button>
-            </div>
-            <form id="datecalc">
-                <h3>Калькулятор дат</h3>
-                <label>
-                    <strong>Первая дата:</strong>
-                    <input type="date" name="firstDate" />
-                </label>
-                <label>
-                    <strong>Вторая дата:</strong>
-                    <input type="date" name="secondDate" />
-                </label>
-                <button type="submit" id="diff_button">
-                    Расчитать промежуток
-                </button>
-                <button type="button" id="reset_but">Очистить форму</button>
-                <p id="datecalc__result" style="color: red"></p>
-            </form>
-
-            <div id="timer" class="hidden">
-                <h3>Таймер</h3>
-                <div class="timer_wrapper">
-                    <figure class="clock">
-                        <form class="inputWrapper">
-                            <label>
-                                Мин
-                                <input
-                                    type="number"
-                                    class="minInput"
-                                    id="minInput"
-                                />
-                            </label>
-                            <div style="width: 50px"></div>
-                            <label>
-                                Сек
-                                <input
-                                    type="number"
-                                    class="secInput"
-                                    id="secInput"
-                                />
-                            </label>
-                        </form>
-
-                        <div class="timer" id="timerBlock">
-                            <div class="mins" id="mins">00</div>
-                            <div>:</div>
-                            <div class="secs" id="secs">00</div>
-                        </div>
-                        <audio src="audio/timer_out.mp3"></audio>
-                    </figure>
-
-                    <div class="btn-group">
-                        <button id="start">Старт</button>
-                        <button id="pause">Стоп</button>
-                        <button id="reset">Сброс</button>
-                    </div>
-                </div>
-            </div>
-
-            <footer>
-                <img src="img/mario.png" alt="Mario" id="mario" />
-                <p>Copyright &copy; 2021 Илья Алексин. Все права защищены.</p>
-                <img src="img/mushroom.png" alt="Mushroom" id="mushroom" />
-            </footer>
+            <div class="cards"></div>
         </div>
     </body>
 </html>
